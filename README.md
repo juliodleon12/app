@@ -1,3 +1,27 @@
+### LEVANTAR AMBIENTE DESDE TU PC
+git clone https://github.com/juliodleon12/app.git
+
+cd app
+
+composer install
+composer update
+
+## CREAR .ENV
+DB_CONNECTION=sqlsrv
+DB_HOST=sqlsrv
+DB_PORT=1433
+DB_DATABASE=laravel
+DB_USERNAME=sa
+DB_PASSWORD=YourStrong!Passw0rd
+
+## LIMPIAR CACHE.
+php artisan key:generate
+php artisan config:cache
+
+
+
+
+### LEVANTAR AMBIENTE DESDE CONTENEDORES
 ### CONSTRUIR CONTENEDORES
 docker-compose up -d --build
 
