@@ -6,8 +6,6 @@ services:
     container_name: dashboard_app
     volumes:
       - .:/var/www
-    depends_on:
-      - sqlsrv
 
   nginx:
     image: nginx:alpine
@@ -19,12 +17,3 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - app
-
-  sqlsrv:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlsrv
-    environment:
-      SA_PASSWORD: "YourStrong!Passw0rd"
-      ACCEPT_EULA: "Y"
-    ports:
-      - "1433:1433"
